@@ -9,7 +9,7 @@ public class CashbackHackServiceTest {
     CashbackHackService service = new CashbackHackService();
 
     @Test
-    void shouldReturn0IfBoundary1000() {
+    public void shouldReturn0IfBoundary1000() {
 
         int actual = service.remain(1000);
         int expected = 0;
@@ -19,7 +19,7 @@ public class CashbackHackServiceTest {
     }
 
     @Test
-    void shouldReturn100IfBoundary900() {
+    public void shouldReturn100IfBoundary900() {
 
         int actual = service.remain(900);
         int expected = 100;
@@ -29,7 +29,7 @@ public class CashbackHackServiceTest {
     }
 
     @Test
-    void shouldReturn200IfBoundary1800() {
+    public void shouldReturn200IfBoundary1800() {
 
         int actual = service.remain(1800);
         int expected = 200;
