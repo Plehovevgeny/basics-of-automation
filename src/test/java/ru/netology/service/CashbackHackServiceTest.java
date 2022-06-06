@@ -1,39 +1,51 @@
 package ru.netology.service;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
 public class CashbackHackServiceTest {
 
     CashbackHackService service = new CashbackHackService();
 
-    @Test
-    public void shouldReturn0IfBoundary1000() {
-
-        int actual = service.remain(1000);
-        int expected = 0;
-
-        assertEquals(actual, expected);
-
-    }
-
-    @Test
-    public void shouldReturn100IfBoundary900() {
+    @org.junit.Test
+    public void shouldReturn999IfAmount1() {
 
         int actual = service.remain(900);
         int expected = 100;
 
-        assertEquals(actual, expected);
-
+        org.junit.Assert.assertEquals(actual, expected);
     }
 
-    @Test
-    public void shouldReturn200IfBoundary1800() {
+    @org.junit.Test
+    public void shouldReturn1IfAmount999() {
+
+        int actual = service.remain(900);
+        int expected = 100;
+
+        org.junit.Assert.assertEquals(actual, expected);
+    }
+
+    @org.junit.Test
+    public void shouldReturn100IfAmount900() {
+
+        int actual = service.remain(900);
+        int expected = 100;
+
+        org.junit.Assert.assertEquals(actual, expected);
+    }
+
+    @org.junit.Test
+    public void shouldReturn200IfAmount1800() {
 
         int actual = service.remain(1800);
         int expected = 200;
 
-        assertEquals(actual, expected);
+        org.junit.Assert.assertEquals(actual, expected);
+    }
 
+    @org.junit.Test
+    public void shouldReturn0IfAmount1000() {
+
+        int actual = service.remain(1000);
+        int expected = 0;
+
+        org.junit.Assert.assertEquals(actual, expected);
     }
 }
